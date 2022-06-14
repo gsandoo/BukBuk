@@ -1,0 +1,141 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Do Hyeon';
+}
+main{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    
+}
+
+.signUpInput{
+     margin-bottom: 20vh;
+}
+
+/* 이름 값 */
+.nameInput{
+   height: 7vh; 
+   margin-bottom: 2vh;
+}
+.inputMessage{
+  
+    height: 5vh;
+    padding-top: 1vh;
+}
+.input{
+   width: 13vw;
+   height: 4vh;
+   padding-left: 1vw;
+}
+
+/* 이메일 값 */
+.emailInput{
+    height: 7vh; 
+    margin-bottom: 2vh;
+ }
+
+.emailInput .inputMessage input{
+  height: 5vh;       
+ }
+
+ /* 비밀번호 값 */
+ .passwordInput{
+    height: 7vh; 
+    margin-bottom: 2vh;
+ }
+
+.passwordInput .inputMessage input{
+  height: 5vh;       
+ }
+
+ /* 전화번호 값 */
+ .phoneNumberInput{
+    height: 7vh; 
+    margin-bottom: 2vh;
+ }
+
+.phoneNumberInput .inputMessage input{
+  height: 5vh;       
+ }
+
+
+ /* 주소 값 */
+.addressInput{
+    height: 7vh; 
+    margin-bottom: 8vh;
+ }
+
+.addressInput .inputMessage input{
+  height: 5vh;       
+ }
+
+.address{
+     display: flex;
+     margin-bottom: 1vh;
+ }
+.search-address{
+     margin-left: 1vw;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+.specific-address{
+     margin-left: 1vw;
+ }
+
+ /* 체크 */
+.signUpButtonAction{
+    font-size: 1.5em;
+    width: 15vw;
+    height: 5vh;
+    background-color: hwb(118 44% 9%);
+    color: #ffffff;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.signUpButtonInaction{
+    font-size: 1.5em;
+    width: 15vw;
+    height: 5vh;
+    background-color:#000000;
+    color: #ffffff;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+/* 체크박스 */
+.agreeCheckbox{
+    padding: 3vh 0 3vh 0;
+}
+.accountCheckboxAgree{
+    padding: 1vh 0 1vh 0;
+}
+.checkboxExplain{
+    background-color: yellowgreen;
+    margin-left: 3%;
+}
+
+
+
+.search_btn{
+    width: 110%;
+    height: 110%
+}
+
+/* 우편번호 닫기 */
+.close{
+    position: absolute;
+    top: -5%;
+    left: 100%;
+    
+}
+.postCode_btn{
+    width: 400%;
+    height:200%;
+}

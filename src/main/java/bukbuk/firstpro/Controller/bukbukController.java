@@ -1,9 +1,11 @@
 package bukbuk.firstpro.Controller;
 
+import bukbuk.firstpro.model.BukReviewDTO;
 import bukbuk.firstpro.model.BukServiceDTO;
 import bukbuk.firstpro.repository.ServiceRepository;
 import bukbuk.firstpro.service.BukServiceImpl;
 import bukbuk.firstpro.service.BukServiceService;
+import bukbuk.firstpro.service.ReviewServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +34,9 @@ public class bukbukController {
     @Autowired
     BukServiceImpl bukService;
 
+    @Autowired
+    ReviewServiceImpl reviewService;
+
     @RequestMapping("/service")
     public Map<String, Object> list(HttpServletRequest request){
         List<BukServiceDTO> list = this.bukService.getServiceList();
@@ -43,5 +48,15 @@ public class bukbukController {
         return map;
     }
 
+    @RequestMapping("/review/{book_title}")
+    public Map<String, Object> reviewList(HttpServletRequest request){
+        List<BukReviewDTO> list = this.reviewService.getReviewList();
+
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("review", list);
+
+        return map;
+    }
 
 }

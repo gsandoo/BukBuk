@@ -1,0 +1,19 @@
+.service-main{
+    width: 30%;
+    height: 100%;
+    text-align: center;
+}
+
+#board{
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.service-title{
+    border-bottom: 3px solid lightgray;
+}
+
+.faq{
+    width: 100%;
+    background-color: darkkhaki;
+}

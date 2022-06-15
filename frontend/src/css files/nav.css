@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Do+Hyeon&family=Noto+Sans+KR:wght@300&family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0 ; 
+    box-sizing: border-box;
+    color: inherit;
+    text-decoration: inherit;
+    font-family: 'Do-Hyeon';
+}
+
+#navibar{
+    width: 100%;
+    height: 150px;
+    border-bottom: 3px solid lightblue;
+}
+.nav-flex{
+    display: flex;
+    align-items: center;
+}
+.nav-left{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon{
+    width: 50%;
+}
+.icon>a{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.title-icon{
+    width: 25%;
+    height: 25%;
+    background-color: inherit;
+}
+.title{
+    width: 50%;
+    display: flex;
+    font-size: 2.5em;
+}
+.search{
+    width: 34%;
+    height: 40%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tab{
+    width: 33%;
+    height: 40%;
+    display: flex;
+    text-align: center;
+}
+.login{
+    width: 33%;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-btn{
+    padding: 1vh 1vw 1vh 1vw;
+    border-radius: 100px;
+    font-weight: 700;
+    border: 3px solid lightgray;
+    cursor: pointer;
+}
+.new-member{
+    width: 33%;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new-member-btn{
+    padding: 1vh 1vw 1vh 1vw;
+    border-radius: 100px;
+    font-weight: 700;
+    border: 3px solid lightgray;
+    cursor: pointer;
+}
+.help{
+    width: 33%;
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.service-btn{
+    padding: 1vh 1vw 1vh 1vw;
+    border-radius: 100px;
+    font-weight: 700;
+    border: 3px solid lightgray;
+    cursor: pointer;
+}
+

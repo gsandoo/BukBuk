@@ -17,7 +17,7 @@ public class BukServiceImpl implements BukServiceService{
         System.out.println("service호출");
 
         List<BukServiceDTO> dto = dao.test();
-        System.out.println("test");
+
         return dao.test();
     }
 }

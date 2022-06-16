@@ -13,8 +13,8 @@ public interface ServiceRepository {
     //찾아옴
     Optional<BukServiceDTO> findById(String service_title);
 
-    //전체출력
     List<BukServiceDTO> findAll();
 
+    //전체출력
     List<BukServiceDTO> test();
 }

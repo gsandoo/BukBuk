@@ -7,10 +7,7 @@ import bukbuk.firstpro.service.BukServiceImpl;
 import bukbuk.firstpro.service.BukServiceService;
 import bukbuk.firstpro.service.ReviewServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -37,6 +34,7 @@ public class bukbukController {
     @Autowired
     ReviewServiceImpl reviewService;
 
+    //고객센터 문의글 전체출력
     @RequestMapping("/service")
     public Map<String, Object> list(HttpServletRequest request){
         List<BukServiceDTO> list = this.bukService.getServiceList();
@@ -48,9 +46,9 @@ public class bukbukController {
         return map;
     }
 
-    @RequestMapping("/review/{book_title}")
-    public Map<String, Object> reviewList(HttpServletRequest request){
-        List<BukReviewDTO> list = this.reviewService.getReviewList();
+    @RequestMapping("/book")
+    public Map<String, Object> reviewList(@RequestParam("book_title") String book_title, HttpServletRequest request){
+        List<BukReviewDTO> list = this.reviewService.getReviewList(book_title);
 
         Map<String, Object> map = new HashMap<>();
 
@@ -58,5 +56,7 @@ public class bukbukController {
 
         return map;
     }
+
+
 
 }

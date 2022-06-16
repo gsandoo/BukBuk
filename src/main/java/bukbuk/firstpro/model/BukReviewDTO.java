@@ -12,4 +12,5 @@ public class BukReviewDTO {
     private String review_title;
     private String review_context;
     private String review_date;
+    private int review_num;
 }

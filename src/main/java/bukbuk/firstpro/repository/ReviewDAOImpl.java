@@ -4,10 +4,12 @@ import bukbuk.firstpro.model.BukReviewDTO;
 import bukbuk.firstpro.model.BukServiceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -25,12 +27,11 @@ public class ReviewDAOImpl implements ReviewDAO{
     }
 
     @Override
-    public List<BukReviewDTO> list() {
-        List<BukReviewDTO> list = null;
+    public List<BukReviewDTO> list(String book_title) {
 
-        sql = "select * from buk_review";
+        sql = "select * from buk_review where book_title = ?";
 
-        return list = this.jdbcTemplate.query(sql, new RowMapper<BukReviewDTO>() {
+        return (List<BukReviewDTO>) this.jdbcTemplate.queryForObject(sql, new RowMapper<BukReviewDTO>() {
             @Override
             public BukReviewDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
                 BukReviewDTO dto = new BukReviewDTO();
@@ -41,10 +42,32 @@ public class ReviewDAOImpl implements ReviewDAO{
                 dto.setReview_title(rs.getString("review_title"));
                 dto.setReview_context(rs.getString("review_context"));
                 dto.setReview_date(rs.getString("review_date"));
+                dto.setReview_num(rs.getByte("review_num"));
 
                 return dto;
             }
 
+        }, book_title);
+    }
+
+    @Override
+    public int insertReview(BukReviewDTO dto) {
+        sql = "select nvl(max(review_num), 0) from buk_review";
+
+        int max_num = this.jdbcTemplate.queryForObject(sql, Integer.class);
+
+        sql = "insert into buk_review values(?, ?, ?, ?, ?, sysdate, ?)";
+
+        return this.jdbcTemplate.update(sql, new PreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement ps) throws SQLException {
+                     ps.setString(1, dto.getReview_id());
+                     ps.setString(2, dto.getBook_title());
+                     ps.setDouble(3, dto.getReview_rate());
+                     ps.setString(4, dto.getReview_title());
+                     ps.setString(5, dto.getReview_context());
+                     ps.setInt(6, max_num + 1);
+            }
         });
     }
 

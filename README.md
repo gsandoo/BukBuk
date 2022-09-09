@@ -6,7 +6,7 @@ participate : two
 
 role : web/frontend
 
-Library : React
+library : React
 
 # 프로젝트 계획서
 https://www.notion.so/8468255543fe4287a74a9e27bf1856c7

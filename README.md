@@ -31,7 +31,7 @@ https://www.notion.so/8468255543fe4287a74a9e27bf1856c7
 ![image](https://user-images.githubusercontent.com/98865571/189365163-1025b744-bbe4-4c95-b7d4-e08b55b80037.png)
 
 
-#로그인 성공 화면 (JWT 토큰 도입)
+# 로그인 성공 화면 (JWT 토큰 도입)
 
 ![image](https://user-images.githubusercontent.com/98865571/189366412-ee7e2850-e93a-4394-83c3-ef825f337d18.png)
 
